@@ -10,7 +10,19 @@ import {
 	usersTypeDef,
 	notificationMutations,
 	notificationQueries,
-	notificationTypeDef
+	notificationTypeDef,
+	chatMutations,
+	chatQueries,
+	chatTypeDef,
+	multimediaMutations,
+	multimediaQueries,
+	multimediaTypeDef,
+	authMutations,
+	authQueries,
+	authTypeDef,
+	stateMutations,
+	stateQueries,
+	stateTypeDef
 } from './auth/users/typeDefs';
 
 import usersResolvers from './auth/users/resolvers';
@@ -20,15 +32,27 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		usersTypeDef,
-		notificationTypeDef
+		notificationTypeDef,
+		chatTypeDef,
+		multimediaTypeDef,
+		authTypeDef,
+		stateTypeDef
 	],
 	[
 		usersQueries,
-		notificationQueries
+		notificationQueries,
+		chatQueries,
+		multimediaQueries,
+		authQueries,
+		stateQueries
 	],
 	[
 		usersMutations,
-		notificationMutations
+		notificationMutations,
+		chatMutations,
+		multimediaMutations,
+		authMutations,
+		stateMutations
 	]
 );
 

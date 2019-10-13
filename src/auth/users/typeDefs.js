@@ -35,13 +35,26 @@ input NotificationInput {
 }
 `;
 
+export const chatTypeDef=`
+
+`;
+
+export const multimediaTypeDef=`
+
+`;
+
+
+export const authTypeDef=`
+
+`;
+
+export const stateTypeDef=`
+
+`;
+
 export const usersQueries = `
     allUsers: [User]!
     userById(id: Int!): User!
-`;
-
-export const notificationQueries = `
-   notificationById(user_id: Int!): [[Notification]!]
 `;
 
 export const usersMutations = `
@@ -50,7 +63,45 @@ deleteUser(id: Int!): Int
 updateUser(user: UserInput!): User!
 `;
 
+export const notificationQueries = `
+   notificationById(user_id: Int!): [[Notification]!]
+`;
+
 export const notificationMutations = `
     createNotification(notification: NotificationInput!):[Notification]
     deleteNotification(user_id: Int!):Int
+`;
+
+export const chatQueries=`
+
+`;
+
+export const chatMutations=`
+
+`;
+
+export const multimediaQueries=`
+
+`;
+
+export const multimediaMutations=`
+
+`;
+
+
+export const authQueries=`
+
+`;
+
+export const authMutations=`
+
+`;
+
+
+export const stateQueries=`
+
+`;
+
+export const stateMutations=`
+
 `;
