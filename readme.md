@@ -1,8 +1,8 @@
-#queries
+## queries
 
-#notifications
+# notifications
 
-query {
+* query {
   notificationById(user_id:14) {
     id 	
     user_id
@@ -11,7 +11,7 @@ query {
   }
 }
 
-mutation{
+* mutation{
   createNotification(notification:{ 
     message: "wwewew"
     sender_id: 12
@@ -22,14 +22,14 @@ mutation{
   }
 }
 
-mutation{
+* mutation{
 	deleteNotification(user_id:12)
 }
 
-#users
+# users
 
-hay que cambiar users por User.all en el metodo index del controlador
-query{
+* hay que cambiar users por User.all en el metodo index del controlador
+* query{
   allUsers{
     id
     username
@@ -37,7 +37,7 @@ query{
   }
 }
 
-mutation {
+* mutation {
   createUser(user: {
     username: "dxgcfh"
     password: "123"
@@ -53,7 +53,7 @@ mutation {
   }
 }
 
-mutation {
+* mutation {
   updateUser(user: {
     id:1
     username: "dgtffttftfttftft"
