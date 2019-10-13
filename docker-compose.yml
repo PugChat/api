@@ -10,5 +10,7 @@ services:
       AUTH_USERS_ENTRY: 'sa-auth-ms/resources/users'
       NOTIFICATION_PORT: '4001'
       NOTIFICATION_ENTRY: 'notifications'
+      USERS_PORT: '4002'
+      USERS_ENTRY: 'users'
     ports:
       - '5000:5000'

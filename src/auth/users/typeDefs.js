@@ -1,16 +1,20 @@
 export const usersTypeDef = `
 type User {
     id: Int!
-    firstName: String!
-    lastName: String!
-    username: String!
+    mail: String!
     password: String!
+    username: String!
+    verification: Boolean!
+    active: Boolean!
 }
 input UserInput {
-    firstName: String!
-    lastName: String!
-    username: String!
+    id: Int
+    mail: String!
     password: String!
+    username: String!
+    verification: Boolean
+    active: Boolean
+    password_confirmation: String!
 }
 
 `;
@@ -34,7 +38,6 @@ input NotificationInput {
 export const usersQueries = `
     allUsers: [User]!
     userById(id: Int!): User!
-    notificationById(user_id: Int!): [[Notification]!]
 `;
 
 export const notificationQueries = `
@@ -42,9 +45,9 @@ export const notificationQueries = `
 `;
 
 export const usersMutations = `
-    createUser(user: UserInput!): User!
-    updateUser(id: Int!, user: UserInput!): User!
-    deleteUser(id: Int!): Int
+createUser(user: UserInput!): User!
+deleteUser(id: Int!): Int
+updateUser(user: UserInput!): User!
 `;
 
 export const notificationMutations = `
