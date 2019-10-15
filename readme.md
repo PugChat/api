@@ -100,3 +100,25 @@ allUsers: (_) =>
   }  
 }  
 
+# states
+* mutation{
+  createState(State:{
+    id_user: "dfc"
+    about: "xdxd"
+    image: "sajdnajdn"
+  }){
+    id
+  }
+}
+
+* query{
+  allStates{
+    about
+  }
+}
+
+* query{
+  stateById(id: 1){
+    about
+  }
+}
