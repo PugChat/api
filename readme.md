@@ -111,6 +111,10 @@ allUsers: (_) =>
   }
 }
 
+* mutation{
+   deleteState(id: 2)
+  }
+
 * query{
   allStates{
     about
