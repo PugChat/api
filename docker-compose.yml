@@ -12,5 +12,7 @@ services:
       NOTIFICATION_ENTRY: 'notifications'
       USERS_PORT: '4002'
       USERS_ENTRY: 'users'
+      STATES_PORT: '8000'
+      STATES_ENTRY: 'api/States'
     ports:
       - '5000:5000'

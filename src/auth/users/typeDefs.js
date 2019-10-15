@@ -1,38 +1,38 @@
 export const usersTypeDef = `
-type User {
-    id: Int!
-    mail: String!
-    password: String!
-    username: String!
-    verification: Boolean!
-    active: Boolean!
-}
-input UserInput {
-    id: Int
-    mail: String!
-    password: String!
-    username: String!
-    verification: Boolean
-    active: Boolean
-    password_confirmation: String!
-}
+    type User {
+        id: Int!
+        mail: String!
+        password: String!
+        username: String!
+        verification: Boolean!
+        active: Boolean!
+    }
+    input UserInput {
+        id: Int
+        mail: String!
+        password: String!
+        username: String!
+        verification: Boolean
+        active: Boolean
+        password_confirmation: String!
+    }
 
 `;
 
 export const notificationTypeDef= `
-type Notification{
-    id: Int
-    message: String
-    sender_id: Int
-    chat_id: Int
-    user_id: Int
-}
-input NotificationInput {
-    message: String
-    sender_id: Int
-    chat_id: Int
-    users: [Int]
-}
+    type Notification{
+        id: Int
+        message: String
+        sender_id: Int
+        chat_id: Int
+        user_id: Int
+    }
+    input NotificationInput {
+        message: String
+        sender_id: Int
+        chat_id: Int
+        users: [Int]
+    }
 `;
 
 export const chatTypeDef=`
@@ -49,7 +49,18 @@ export const authTypeDef=`
 `;
 
 export const stateTypeDef=`
-
+    type State{
+        id: Int!
+        id_user: String!
+        about: String
+        image: String
+        created_at: String
+    }
+    input StateInput{
+        id_user: String!
+        about: String
+        image: String
+    }
 `;
 
 export const usersQueries = `
@@ -58,9 +69,9 @@ export const usersQueries = `
 `;
 
 export const usersMutations = `
-createUser(user: UserInput!): User!
-deleteUser(id: Int!): Int
-updateUser(user: UserInput!): User!
+    createUser(user: UserInput!): User!
+    deleteUser(id: Int!): Int
+    updateUser(user: UserInput!): User!
 `;
 
 export const notificationQueries = `
@@ -99,9 +110,11 @@ export const authMutations=`
 
 
 export const stateQueries=`
-
+    allStates: [State]
+    stateById(id: Int!): State!
 `;
 
 export const stateMutations=`
-
+    createState(State: StateInput!): State!
+    deleteState(id: Int!): Int
 `;
