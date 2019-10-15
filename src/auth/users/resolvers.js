@@ -1,10 +1,15 @@
 import { generalRequest, getRequest } from '../../utilities';
-import {url, port, entryPoint ,notificationPort , notificationEntryPoint,usersPort,usersEntryPoint, statesPort, statesEntryPoint } from './server';
+import {notificationURL, notificationPort, notificationEntryPoint, usersURL, usersPort, usersEntryPoint, statesPort, statesEntryPoint, statesURL } from './server';
 
-const URL = `http://${url}:${port}/${entryPoint}`;
-const NOTIFICATION_URL = `http://${url}:${notificationPort}/${notificationEntryPoint}`;
-const USERS_URL = `http://${url}:${usersPort}/${usersEntryPoint}`;
-const STATES_URL = `http://${url}:${statesPort}/${statesEntryPoint}`;
+
+//const NOTIFICATION_URL = `http://${url}:${notificationPort}/${notificationEntryPoint}`;
+//const USERS_URL = `http://${url}:${usersPort}/${usersEntryPoint}`;
+const NOTIFICATION_URL = `http://${notificationURL}:4001/notifications`;
+const USERS_URL = `http://${usersURL}:4002/users`
+const STATES_URL = `http://${statesURL}:8000/api/States`;
+
+//const DEBUG_URL = `https://hookb.in/pzkELOnKm3i3b3qV0BEy`;
+
 
 const resolvers = {
 	Query: {
