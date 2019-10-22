@@ -23,13 +23,16 @@ input UserInput {
     password_confirmation: String!
 }
 ```
-+ En typeDefs.js crear (en const Querie o Mutation segun sea la peticion en el campo que corresponda, por ejemplo para queries de notification se pone en export const notificationQueries=), nombre_de_la_perticion(argumento1:tipo,argumento2:tipo):tipo_que_retorna ej: userById(id: Int!): User!
-
++ En typeDefs.js crear (en const Querie o Mutation segun sea la peticion en el campo que corresponda, por ejemplo para queries de notification se pone en 
+```
+export const notificationQueries=), nombre_de_la_perticion(argumento1:tipo,argumento2:tipo):tipo_que_retorna ej: userById(id: Int!): User!
+```
 
 + En resolvers.js crear en query o en mutation segun corresponda, nombre_de_la_peticion:(_,{parametros}) => generalRequest(url_de_la_ruta,tipo_de_peticion,parametros) ej
+```
 allUsers: (_) =>
 		generalRequest(`${USERS_URL}/index`, 'GET')
-
+```
 + se pueden crear const con parte de la direccion, los puertos, etc en el archivo server.js hay que importarlos en resolvers.js para poder usarlos, las variables que estan ahi vienen de docker-compose.
 
 
@@ -67,15 +70,17 @@ mutation{
 # users
 
 * hay que cambiar users por User.all en el metodo index del controlador
-* query{
+```
+query{
   allUsers{
     id
     username
     mail
   }
 }
-
-* mutation {
+```
+```
+mutation {
   createUser(user: {
     username: "dxgcfh"
     password: "123"
@@ -83,15 +88,15 @@ mutation{
     verification:true
     active: true
     password_confirmation:"123"
-
   }) {
     username
     id
     mail
   }
 }
-
-* mutation {
+```
+```
+mutation {
   updateUser(user: {
     id:1
     username: "dgtffttftfttftft"
@@ -106,9 +111,10 @@ mutation{
     mail
   }
 }
-
+```
 # states
-* mutation{
+```
+mutation{
   createState(State:{
     id_user: "dfc"
     about: "xdxd"
@@ -117,19 +123,23 @@ mutation{
     id
   }
 }
-
-* mutation{
+```
+```
+mutation{
    deleteState(id: 2)
   }
-
-* query{
+```
+```
+query{
   allStates{
     about
   }
 }
-
-* query{
+```
+```
+query{
   stateById(id: 1){
     about
   }
 }
+```
