@@ -14,5 +14,7 @@ services:
       USERS_ENTRY: 'users'
       STATES_PORT: '8000'
       STATES_ENTRY: 'api/States'
+      MULTIMEDIA_PORT: '8081'
+      MULTIMEDIA_ENTRY: '/entries'
     ports:
       - '5000:5000'

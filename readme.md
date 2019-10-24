@@ -23,22 +23,39 @@ input UserInput {
     password_confirmation: String!
 }
 ```
-+ En typeDefs.js crear (en const Querie o Mutation segun sea la peticion en el campo que corresponda, por ejemplo para queries de notification se pone en 
++ En typeDefs.js crear en const Querie o Mutation segun sea la peticion en el campo que corresponda, por ejemplo para queries de notification se pone en export const notificationQueries=, la siguiente estructura:
 ```
-export const notificationQueries=), nombre_de_la_perticion(argumento1:tipo,argumento2:tipo):tipo_que_retorna ej: userById(id: Int!): User!
+ nombre_de_la_perticion(argumento1:tipo,argumento2:tipo):tipo_que_retorna 
+ ej: 
+ userById(id: Int!): User!
 ```
 
-+ En resolvers.js crear en query o en mutation segun corresponda, nombre_de_la_peticion:(_,{parametros}) => generalRequest(url_de_la_ruta,tipo_de_peticion,parametros) ej
++ En resolvers.js crear en query o en mutation segun corresponda:
+```
+nombre_de_la_peticion:(_,{parametros}) => 
+  generalRequest(url_de_la_ruta,tipo_de_peticion,parametros)
+```
+ej:
 ```
 allUsers: (_) =>
-		generalRequest(`${USERS_URL}/index`, 'GET')
+  generalRequest(`${USERS_URL}/index`, 'GET')
 ```
-+ se pueden crear const con parte de la direccion, los puertos, etc en el archivo server.js hay que importarlos en resolvers.js para poder usarlos, las variables que estan ahi vienen de docker-compose.
++ se pueden crear const con parte de la direccion, los puertos, etc en el archivo server.js hay que importarlos en resolvers.js para poder usarlos, las variables que estan ahi vienen de docker-compose. 
+Ej:
+En docker-compose.yml
+```
+MULTIMEDIA_PORT: '8081'
+MULTIMEDIA_ENTRY: '/entries'
+```
+En servers.js
+```
+export const multimediaPort = process.env.MULTIMEDIA_PORT
+export const multimediaEntryPoint = process.env.MULTIMEDIA_ENTRY
+```
 
+# queries
 
-## queries
-
-# notifications
+## notifications
 
 ```
 query {
@@ -67,7 +84,7 @@ mutation{
 	deleteNotification(user_id:12)
 }
 ```
-# users
+## users
 
 * hay que cambiar users por User.all en el metodo index del controlador
 ```
@@ -112,7 +129,7 @@ mutation {
   }
 }
 ```
-# states
+## states
 ```
 mutation{
   createState(State:{
@@ -142,4 +159,54 @@ query{
     about
   }
 }
+```
+#Multimedia
+```
+query{
+  allFiles(){
+    id
+    userid
+    name
+    link
+    chatID
+  }
+}
+```
+```
+query{
+  getFile(id: 1){
+    id
+    userid
+    name
+    link
+    chatID
+  }
+}
+```
+```
+mutation{
+  createFile(File:{
+    userid: 1
+    name: "sajdnajdn"
+    link: "sajdnajdn"
+    chatID: 2
+  }){
+  }
+}
+```
+```
+mutation{
+  updateFile(File:{
+    userid: 1
+    name: "sajdnajdn"
+    link: "sajdnajdn"
+    chatID: 2
+  }){
+  }
+}
+```
+```
+mutation{
+   deleteFile(id: 2)
+  }
 ```

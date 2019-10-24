@@ -5,5 +5,5 @@ export const notificationPort = process.env.NOTIFICATION_PORT
 export const notificationEntryPoint = process.env.NOTIFICATION_ENTRY
 export const usersPort = process.env.USERS_PORT
 export const usersEntryPoint = process.env.USERS_ENTRY
-export const statesPort = process.env.STATES_PORT
-export const statesEntryPoint = process.env.STATES_ENTRY
+export const multimediaPort = process.env.MULTIMEDIA_PORT
+export const multimediaEntryPoint = process.env.MULTIMEDIA_ENTRY

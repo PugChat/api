@@ -40,7 +40,19 @@ export const chatTypeDef=`
 `;
 
 export const multimediaTypeDef=`
-
+    type File{
+    id: Int!,
+    userid: Int,
+    name: String,
+    link: String,
+    chatID: Int
+    }
+    type FileInput{
+        userid: Int,
+        name: String,
+        link: String,
+        chatID: Int
+    }
 `;
 
 
@@ -84,6 +96,7 @@ export const notificationMutations = `
 `;
 
 export const chatQueries=`
+    
 
 `;
 
@@ -92,11 +105,14 @@ export const chatMutations=`
 `;
 
 export const multimediaQueries=`
-
+    allFiles():[File] 
+    getFile(id:Int!):File
 `;
 
 export const multimediaMutations=`
-
+    createFile(File: FileInput!):String
+    updateFile(id:Int!, File: FileInput!):String
+    deleteFile(id:Int!):String
 `;
 
 
