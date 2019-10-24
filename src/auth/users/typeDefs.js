@@ -111,7 +111,7 @@ export const multimediaQueries=`
 
 export const multimediaMutations=`
     createFile(File: FileInput!):String
-    updateFile(id:Int!, File: FileInput!):String
+    updateFile(File: FileInput!):String
     deleteFile(id:Int!):String
 `;
 

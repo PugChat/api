@@ -1,5 +1,5 @@
 import { generalRequest, getRequest } from '../../utilities';
-import {url, port, entryPoint ,notificationPort , notificationEntryPoint,usersPort,usersEntryPoint, statesPort, statesEntryPoint } from './server';
+import {url, port, entryPoint ,notificationPort , notificationEntryPoint,usersPort,usersEntryPoint, statesPort, statesEntryPoint, multimediaPort, multimediaEntryPoint,chatPort,chatEntryPoint,authPort,authEntryPoint } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
 const NOTIFICATION_URL = `http://${url}:${notificationPort}/${notificationEntryPoint}`;

@@ -159,7 +159,7 @@ query{
   }
 }
 ```
-# Multimedia
+## Multimedia
 ```
 query{
   allFiles(){
