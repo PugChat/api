@@ -41,13 +41,12 @@ allUsers: (_) =>
   generalRequest(`${USERS_URL}/index`, 'GET')
 ```
 + se pueden crear const con parte de la direccion, los puertos, etc en el archivo server.js hay que importarlos en resolvers.js para poder usarlos, las variables que estan ahi vienen de docker-compose. 
-Ej:
-En docker-compose.yml
++ En docker-compose.yml
 ```
 MULTIMEDIA_PORT: '8081'
 MULTIMEDIA_ENTRY: '/entries'
 ```
-En servers.js
++ En servers.js
 ```
 export const multimediaPort = process.env.MULTIMEDIA_PORT
 export const multimediaEntryPoint = process.env.MULTIMEDIA_ENTRY
@@ -160,7 +159,7 @@ query{
   }
 }
 ```
-#Multimedia
+# Multimedia
 ```
 query{
   allFiles(){
