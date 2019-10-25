@@ -36,7 +36,19 @@ export const notificationTypeDef= `
 `;
 
 export const chatTypeDef=`
-
+    type Chat{
+        id: Int
+        emisor: Int
+        receptor: Int
+        mensaje: String
+        fecha: Date
+    }
+    input ChatInput {
+        emisor: Int
+        receptor: Int
+        mensaje: String
+        fecha: Date
+    }
 `;
 
 export const multimediaTypeDef=`
@@ -96,12 +108,11 @@ export const notificationMutations = `
 `;
 
 export const chatQueries=`
-    
-
+    getChatBetween(emisor: Int!, receptor: Int!):[Chat]
 `;
 
 export const chatMutations=`
-
+    createChat(Chat: ChatInput!):[Chat]
 `;
 
 export const multimediaQueries=`

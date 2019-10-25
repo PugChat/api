@@ -6,6 +6,7 @@ const NOTIFICATION_URL = `http://${url}:${notificationPort}/${notificationEntryP
 const USERS_URL = `http://${url}:${usersPort}/${usersEntryPoint}`;
 const STATES_URL = `http://${url}:${statesPort}/${statesEntryPoint}`;
 const MULTIMEDIA_URL =`http://${url}:${multimediaPort}/${multimediaEntryPoint}`;
+const CHAT_URL = `http://${url}:${chatPort}/${chatEntryPoint}`;
 const resolvers = {
 	Query: {
 		allUsers: (_) =>
@@ -22,6 +23,8 @@ const resolvers = {
 			generalRequest(`${MULTIMEDIA_URL}`, 'GET'),
 		getFile: (_, {id}) => 
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'GET'),
+		getChatBetween: (_, {emisor, receptor}) =>
+			generalRequest(`${MULTIMEDIA_URL}/${emisor}/${receptor}`, 'GET'),
 	},
 	Mutation: {
 		createUser: (_, { user }) =>
@@ -44,7 +47,8 @@ const resolvers = {
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'PUT',File),
 		deleteFile: (_,{id}) => 
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'DELETE'),
-	
+		createChat: (_, { Chat }) =>
+			generalRequest(`${CHAT_URL}`, 'POST', Chat),
 	}
 };
 
