@@ -230,7 +230,7 @@ mutation{
     mensaje: "prueba 1"
     fecha: "1997-03-28"
   }){
-    id
+    _id
   }
 }
 ```
