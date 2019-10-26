@@ -17,6 +17,6 @@ services:
       MULTIMEDIA_PORT: '8081'
       MULTIMEDIA_ENTRY: '/entries'
       CHAT_PORT: '8080'
-      CHAT_ENTRY: '/messages'
+      CHAT_ENTRY: 'messages/'
     ports:
       - '5000:5000'

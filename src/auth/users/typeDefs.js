@@ -37,17 +37,17 @@ export const notificationTypeDef= `
 
 export const chatTypeDef=`
     type Chat{
-        id: Int
+        _id: String
         emisor: Int
         receptor: Int
         mensaje: String
-        fecha: Date
+        fecha: String
     }
     input ChatInput {
         emisor: Int
         receptor: Int
         mensaje: String
-        fecha: Date
+        fecha: String
     }
 `;
 
@@ -59,7 +59,7 @@ export const multimediaTypeDef=`
     link: String,
     chatID: Int
     }
-    type FileInput{
+    input FileInput{
         userid: Int,
         name: String,
         link: String,
@@ -112,11 +112,11 @@ export const chatQueries=`
 `;
 
 export const chatMutations=`
-    createChat(Chat: ChatInput!):[Chat]
+    createChat(Chat: ChatInput!): Chat
 `;
 
 export const multimediaQueries=`
-    allFiles():[File] 
+    allFiles:[File] 
     getFile(id:Int!):File
 `;
 

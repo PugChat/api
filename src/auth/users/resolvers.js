@@ -24,7 +24,7 @@ const resolvers = {
 		getFile: (_, {id}) => 
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'GET'),
 		getChatBetween: (_, {emisor, receptor}) =>
-			generalRequest(`${MULTIMEDIA_URL}/${emisor}/${receptor}`, 'GET'),
+			generalRequest(`${CHAT_URL}${emisor}/${receptor}`, 'GET'),
 	},
 	Mutation: {
 		createUser: (_, { user }) =>

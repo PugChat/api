@@ -11,3 +11,5 @@ export const chatPort = process.env.CHAT_PORT
 export const chatEntryPoint = process.env.CHAT_ENTRY
 export const authPort = process.env.AUTH_PORT
 export const authEntryPoint = process.env.AUTH_ENTRY
+export const statesPort = process.env.STATES_PORT
+export const statesEntryPoint = process.env.STATES_ENTRY
