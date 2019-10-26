@@ -57,14 +57,14 @@ export const multimediaTypeDef=`
     userid: Int,
     name: String,
     link: String,
-    chatID: String
+    chatid: String
     }
     input FileInput{
         id: Int
         userid: Int,
         name: String,
         link: String,
-        chatID: String
+        chatid: String
     }
 `;
 

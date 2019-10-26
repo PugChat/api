@@ -167,7 +167,7 @@ query{
     userid
     name
     link
-    chatID
+    chatid
   }
 }
 ```
@@ -178,7 +178,7 @@ query{
     userid
     name
     link
-    chatID
+    chatid
   }
 }
 ```
@@ -189,13 +189,13 @@ mutation{
     userid: 1
     name: "sajdnajdn"
     link: "sajdnajdn"
-    chatID: "2"
+    chatid: "2"
   }) {
     id
     userid
     name 
     link
-    chatID
+    chatid
   }
 }
 ```
@@ -206,13 +206,13 @@ mutation{
     userid: 1
     name: "qwerty"
     link: "safdsn"
-    chatID: "2"
+    chatid: "2"
   }) {
     id
     userid
     name 
     link
-    chatID
+    chatid
   }
 }
 ```
