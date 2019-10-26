@@ -43,8 +43,8 @@ const resolvers = {
 			generalRequest(`${STATES_URL}/${id}`, 'DELETE'),
 		createFile: (_,{File}) => 
 			generalRequest(`${MULTIMEDIA_URL}`, 'POST',File),
-		updateFile: (_,{id,File}) => 
-			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'PUT',File),
+		updateFile: (_,{File}) => 
+			generalRequest(`${MULTIMEDIA_URL}/${File.id}`, 'PUT',File),
 		deleteFile: (_,{id}) => 
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'DELETE'),
 		createChat: (_, { Chat }) =>

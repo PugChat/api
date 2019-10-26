@@ -162,7 +162,7 @@ query{
 ## Multimedia
 ```
 query{
-  allFiles(){
+  allFiles{
     id
     userid
     name
@@ -185,29 +185,41 @@ query{
 ```
 mutation{
   createFile(File:{
+    id:1
     userid: 1
     name: "sajdnajdn"
     link: "sajdnajdn"
-    chatID: 2
-  }){
+    chatID: "2"
+  }) {
+    id
+    userid
+    name 
+    link
+    chatID
   }
 }
 ```
 ```
 mutation{
   updateFile(File:{
+    id:1
     userid: 1
-    name: "sajdnajdn"
-    link: "sajdnajdn"
-    chatID: 2
-  }){
+    name: "qwerty"
+    link: "safdsn"
+    chatID: "2"
+  }) {
+    id
+    userid
+    name 
+    link
+    chatID
   }
 }
 ```
 ```
 mutation{
-   deleteFile(id: 2)
-  }
+   deleteFile(id: 1)
+}
 ```
 ## chats
 

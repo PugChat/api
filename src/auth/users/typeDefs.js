@@ -57,13 +57,14 @@ export const multimediaTypeDef=`
     userid: Int,
     name: String,
     link: String,
-    chatID: Int
+    chatID: String
     }
     input FileInput{
+        id: Int
         userid: Int,
         name: String,
         link: String,
-        chatID: Int
+        chatID: String
     }
 `;
 
@@ -121,8 +122,8 @@ export const multimediaQueries=`
 `;
 
 export const multimediaMutations=`
-    createFile(File: FileInput!):String
-    updateFile(File: FileInput!):String
+    createFile(File: FileInput!):File
+    updateFile(File: FileInput!):File
     deleteFile(id:Int!):String
 `;
 

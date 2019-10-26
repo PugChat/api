@@ -15,7 +15,7 @@ services:
       STATES_PORT: '8000'
       STATES_ENTRY: 'api/States'
       MULTIMEDIA_PORT: '8081'
-      MULTIMEDIA_ENTRY: '/entries'
+      MULTIMEDIA_ENTRY: 'entries'
       CHAT_PORT: '8080'
       CHAT_ENTRY: 'messages/'
     ports:
