@@ -70,7 +70,11 @@ export const multimediaTypeDef=`
 
 
 export const authTypeDef=`
-
+    type Token{
+        success: Boolean!
+        message: String!
+        token: String
+    }     
 `;
 
 export const stateTypeDef=`
@@ -129,11 +133,11 @@ export const multimediaMutations=`
 
 
 export const authQueries=`
-    allAuthUsers: String
+    signin(userName: String!,password: String!): String
 `;
 
 export const authMutations=`
-
+    createAuthUser(userName: String!,password: String!): String    
 `;
 
 

@@ -10,8 +10,6 @@ const MULTIMEDIA_URL =`http://${url}:${multimediaPort}/${multimediaEntryPoint}`;
 const CHAT_URL = `http://${url}:${chatPort}/${chatEntryPoint}`;
 const resolvers = {
 	Query: {
-		allAuthUsers: (_) =>
-		    generalRequest(`${AUTH_URL}`, 'GET'),
 		allUsers: (_) =>
 			generalRequest(`${USERS_URL}/index`, 'GET'),
 		userById: (_, { id }) =>
@@ -28,8 +26,12 @@ const resolvers = {
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'GET'),
 		getChatBetween: (_, {emisor, receptor}) =>
 			generalRequest(`${CHAT_URL}${emisor}/${receptor}`, 'GET'),
+		signin: (_,{ userName,password })=>		    
+	        generalRequest(`${AUTH_URL}/api/signin/${userName}/${password}`, 'GET')	
 	},
 	Mutation: {
+		createAuthUser: (_, { userName,password }) =>
+            generalRequest(`${AUTH_URL}/signup/${userName}/${password}`, 'POST'),
 		createUser: (_, { user }) =>
 			generalRequest(`${USERS_URL}/create`, 'POST', user),
 		updateUser: (_, { id, user }) =>
