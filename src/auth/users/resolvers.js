@@ -2,6 +2,7 @@ import { generalRequest, getRequest } from '../../utilities';
 import {url, port, entryPoint ,notificationPort , notificationEntryPoint,usersPort,usersEntryPoint, statesPort, statesEntryPoint, multimediaPort, multimediaEntryPoint,chatPort,chatEntryPoint,authPort,authEntryPoint } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
+const AUTH_URL = `http://${url}:${authPort}`;
 const NOTIFICATION_URL = `http://${url}:${notificationPort}/${notificationEntryPoint}`;
 const USERS_URL = `http://${url}:${usersPort}/${usersEntryPoint}`;
 const STATES_URL = `http://${url}:${statesPort}/${statesEntryPoint}`;
@@ -9,6 +10,8 @@ const MULTIMEDIA_URL =`http://${url}:${multimediaPort}/${multimediaEntryPoint}`;
 const CHAT_URL = `http://${url}:${chatPort}/${chatEntryPoint}`;
 const resolvers = {
 	Query: {
+		allAuthUsers: (_) =>
+		    generalRequest(`${AUTH_URL}`, 'GET'),
 		allUsers: (_) =>
 			generalRequest(`${USERS_URL}/index`, 'GET'),
 		userById: (_, { id }) =>

@@ -129,7 +129,7 @@ export const multimediaMutations=`
 
 
 export const authQueries=`
-
+    allAuthUsers: String
 `;
 
 export const authMutations=`
