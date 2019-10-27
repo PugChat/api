@@ -66,8 +66,6 @@ mutation{
   createAuthUser(userName: "user1",password: "1234")
 }
 ```
-```
-
 ## notifications
 
 ```
