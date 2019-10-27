@@ -54,6 +54,23 @@ export const multimediaEntryPoint = process.env.MULTIMEDIA_ENTRY
 
 # queries
 
+## authentication
+
+```
+query{
+  signin(userName:"user1",password:"1234")
+}
+```
+```
+mutation{
+  createAuthUser(userName: "user1",password: "1234")
+}
+```
+```
+mutation{
+	deleteNotification(user_id:12)
+}
+```
 ## notifications
 
 ```
