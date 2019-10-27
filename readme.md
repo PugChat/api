@@ -67,10 +67,7 @@ mutation{
 }
 ```
 ```
-mutation{
-	deleteNotification(user_id:12)
-}
-```
+
 ## notifications
 
 ```
