@@ -26,12 +26,12 @@ const resolvers = {
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'GET'),
 		getChatBetween: (_, {emisor, receptor}) =>
 			generalRequest(`${CHAT_URL}${emisor}/${receptor}`, 'GET'),
-		signin: (_,{ userName,password })=>		    
-	        generalRequest(`${AUTH_URL}/api/signin/${userName}/${password}`, 'GET')	
+		signin: (_,{ user })=>		    
+	        generalRequest(`${AUTH_URL}/api/signin/${user.userName}/${user.password}`, 'GET')	
 	},
 	Mutation: {
-		createAuthUser: (_, { userName,password }) =>
-            generalRequest(`${AUTH_URL}/signup/${userName}/${password}`, 'POST'),
+		createAuthUser: (_, { user}) =>
+            generalRequest(`${AUTH_URL}/signup/${user.userName}/${user.password}`, 'POST'),
 		createUser: (_, { user }) =>
 			generalRequest(`${USERS_URL}/create`, 'POST', user),
 		updateUser: (_, { id, user }) =>

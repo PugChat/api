@@ -58,12 +58,12 @@ export const multimediaEntryPoint = process.env.MULTIMEDIA_ENTRY
 
 ```
 query{
-  signin(userName:"user1",password:"1234")
+  signin(user:{userName:"user1",password:"1234"})
 }
 ```
 ```
 mutation{
-  createAuthUser(userName: "user1",password: "1234")
+  createAuthUser(user:{userName:"user1",password:"1234"})
 }
 ```
 ## notifications

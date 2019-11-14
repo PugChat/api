@@ -74,7 +74,11 @@ export const authTypeDef=`
         success: Boolean!
         message: String!
         token: String
-    }     
+    }  
+    input AuthUserInput{
+        userName: String!
+        password: String!
+    }   
 `;
 
 export const stateTypeDef=`
@@ -133,11 +137,11 @@ export const multimediaMutations=`
 
 
 export const authQueries=`
-    signin(userName: String!,password: String!): String
+    signin(user:AuthUserInput): String
 `;
 
 export const authMutations=`
-    createAuthUser(userName: String!,password: String!): String    
+    createAuthUser(user:AuthUserInput): String    
 `;
 
 
