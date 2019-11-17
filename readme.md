@@ -237,10 +237,9 @@ mutation{
 
 ```
 query {
-  getChatBetween(emisor:1,receptor:2) {
+  getChatBetween{
     _id
     emisor
-    receptor
     mensaje
     fecha
   }
@@ -250,7 +249,6 @@ query {
 mutation{
   createChat(Chat:{
     emisor: 1
-    receptor: 2
     mensaje: "prueba 1"
     fecha: "1997-03-28"
   }){

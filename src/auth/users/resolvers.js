@@ -24,8 +24,8 @@ const resolvers = {
 			generalRequest(`${MULTIMEDIA_URL}`, 'GET'),
 		getFile: (_, {id}) => 
 			generalRequest(`${MULTIMEDIA_URL}/${id}`, 'GET'),
-		getChatBetween: (_, {emisor, receptor}) =>
-			generalRequest(`${CHAT_URL}${emisor}/${receptor}`, 'GET'),
+		getChatBetween: (_/*, {emisor, receptor}*/) =>
+			generalRequest(`${CHAT_URL}`, 'GET'),
 		signin: (_,{ user })=>		    
 	        generalRequest(`${AUTH_URL}/api/signin/${user.userName}/${user.password}`, 'GET')	
 	},

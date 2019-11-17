@@ -39,13 +39,11 @@ export const chatTypeDef=`
     type Chat{
         _id: String
         emisor: Int
-        receptor: Int
         mensaje: String
         fecha: String
     }
     input ChatInput {
         emisor: Int
-        receptor: Int
         mensaje: String
         fecha: String
     }
@@ -117,7 +115,7 @@ export const notificationMutations = `
 `;
 
 export const chatQueries=`
-    getChatBetween(emisor: Int!, receptor: Int!):[Chat]
+    getChatBetween:[Chat]
 `;
 
 export const chatMutations=`
