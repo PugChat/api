@@ -97,10 +97,18 @@ mutation{
 ```
 ## users
 
-* hay que cambiar users por User.all en el metodo index del controlador
 ```
 query{
   allUsers{
+    id
+    username
+    mail
+  }
+}
+```
+```
+query{
+  userByUsername(username:"dxgcfh"){
     id
     username
     mail

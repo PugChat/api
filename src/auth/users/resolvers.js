@@ -14,6 +14,8 @@ const resolvers = {
 			generalRequest(`${USERS_URL}/index`, 'GET'),
 		userById: (_, { id }) =>
 			generalRequest(`${USERS_URL}/show?id=${id}`, 'GET'),
+		userByUsername: (_, { username }) =>
+			generalRequest(`${USERS_URL}/findByUsername?username=${username}`, 'GET'),		
 		notificationById: (_, { user_id }) =>
 			generalRequest(`${NOTIFICATION_URL}/show?user_id=${user_id}`, 'GET'),
 		allStates: (_) =>

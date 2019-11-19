@@ -97,6 +97,7 @@ export const stateTypeDef=`
 export const usersQueries = `
     allUsers: [User]!
     userById(id: Int!): User!
+    userByUsername(username:String!):User!
 `;
 
 export const usersMutations = `
