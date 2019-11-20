@@ -1,12 +1,12 @@
 import { generalRequest, getRequest } from '../../utilities';
-import {url, port, entryPoint ,notificationPort , notificationEntryPoint,usersPort,usersEntryPoint, statesPort, statesEntryPoint, multimediaPort, multimediaEntryPoint,chatPort,chatEntryPoint,authPort,authEntryPoint } from './server';
+import {url, port, entryPoint,notificationUrl,authUrl,usersUrl,statesUrl,multimediaUrl,notificationPort , notificationEntryPoint,usersPort,usersEntryPoint, statesPort, statesEntryPoint, multimediaPort, multimediaEntryPoint,chatPort,chatEntryPoint,authPort,authEntryPoint } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
-const AUTH_URL = `http://${url}:${authPort}`;
-const NOTIFICATION_URL = `http://${url}:${notificationPort}/${notificationEntryPoint}`;
-const USERS_URL = `http://${url}:${usersPort}/${usersEntryPoint}`;
-const STATES_URL = `http://${url}:${statesPort}/${statesEntryPoint}`;
-const MULTIMEDIA_URL =`http://${url}:${multimediaPort}/${multimediaEntryPoint}`;
+const AUTH_URL = `http://${authUrl}:${authPort}`;
+const NOTIFICATION_URL = `http://${notificationUrl}:${notificationPort}/${notificationEntryPoint}`;
+const USERS_URL = `http://${usersUrl}:${usersPort}/${usersEntryPoint}`;
+const STATES_URL = `http://${statesUrl}:${statesPort}/${statesEntryPoint}`;
+const MULTIMEDIA_URL =`http://${multimediaUrl}:${multimediaPort}/${multimediaEntryPoint}`;
 const CHAT_URL = `http://${url}:${chatPort}/${chatEntryPoint}`;
 const resolvers = {
 	Query: {
